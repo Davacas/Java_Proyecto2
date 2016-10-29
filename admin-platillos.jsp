@@ -132,7 +132,7 @@
                 <td> <%= rs.getString(4) %></td>
                 <td>
                     <a href="actualizar-platillo.jsp?nombre=<%=rs.getString(2)%>" class="waves-effect waves-light btn green">Actualizar platillo</a>
-                    <a href="deleteplatillo.jsp" class="waves-effect waves-light btn red">Eliminar platillo</a>
+                    <a href="deleteplatillo.jsp?nombre=<%=rs.getString(2)%>" class="waves-effect waves-light btn red">Eliminar platillo</a>
                 </td>
             </tr>
             

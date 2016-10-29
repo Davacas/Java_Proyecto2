@@ -9,7 +9,7 @@
 <%
     String nombre = request.getParameter("nombre");
     String descripcion = request.getParameter("descripcion");
-    double precio = Double.parseDouble(request.getParameter("precio"));
+    String precio = request.getParameter("precio");
     
     Class.forName("com.mysql.jdbc.Driver");
     

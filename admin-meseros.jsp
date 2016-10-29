@@ -132,9 +132,9 @@
                 
                 <td>
                     <!--a href="updatemesero.jsp">Actualizar mesero</a-->
-                    <a href="actualizar-mesero.jsp" class="waves-effect waves-light btn green">Actualizar mesero</a>
+                    <a href="actualizar-mesero.jsp?user=<%=rs.getString(2)%>" class="waves-effect waves-light btn green">Actualizar mesero</a>
                     <!--a href="deletemesero.jsp">Eliminar mesero</a-->
-                    <a href="deletemesero.jsp" class="waves-effect waves-light btn red">Eliminar mesero</a>
+                    <a href="deletemesero.jsp?user=<%=rs.getString(2)%>" class="waves-effect waves-light btn red">Eliminar mesero</a>
                 </td>
             </tr>
             <% } %>
