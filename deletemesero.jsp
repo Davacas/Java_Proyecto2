@@ -8,8 +8,6 @@
 <%@page import="java.sql.*" %>
 <%
     String nombre = request.getParameter("nombre");
-    String descripcion = request.getParameter("descripcion");
-    double precio = Double.parseDouble(request.getParameter("precio"));
     
     Class.forName("com.mysql.jdbc.Driver");
     
@@ -17,8 +15,7 @@
     
     Statement st = con.createStatement();
 
-    int i = st.executeUpdate("INSERT INTO Platillo (nombre,descripcion,precio)"
-            + " VALUES (\'" + nombre + "\',\'" + descripcion + "\'," + precio + ")");
+    int i = st.executeUpdate("DELETE FROM Mesero WHERE nombre=" + nombre);
     if (i > 0) {
         response.sendRedirect("registroexitoso.jsp");
     }

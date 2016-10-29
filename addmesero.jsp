@@ -17,7 +17,7 @@
     
     Statement st = con.createStatement();
 
-    int i = st.executeUpdate("INSERT INTO Empleados (username,password,nombre,puesto)"
+    int i = st.executeUpdate("INSERT INTO Empleado (username,password,nombre,puesto)"
             + " VALUES (\'" + username + "\',\'" + password + "\',\')" + nombre + "\',\'MESERO')");
     if (i > 0) {
         response.sendRedirect("registroexitoso.jsp");

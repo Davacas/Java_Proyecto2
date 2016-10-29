@@ -25,7 +25,26 @@
         response.sendRedirect("index.jsp");
     }
     else {
-        response.sendRedirect("error.jsp");
+        rs = st.executeQuery("SELECT * FROM Empleado WHERE username=\'"+username+"\' and password=\'"+password+"\'");
+
+        if(rs.next()){
+            session.setAttribute("username",username);
+            session.setAttribute("puesto",rs.getString(5));
+            if(session.getAttribute("puesto").toString().equals("MESERO")) {
+                
+                response.sendRedirect("menu-meseros.jsp");
+            }
+            else if(session.getAttribute("puesto").toString().equals("GERENTE")) {
+                %>
+        test
+        <%
+                response.sendRedirect("menu-gerente.jsp");
+            }
+            
+        }
+        else {
+            response.sendRedirect("error.jsp");
+        }
     }
 
 %>

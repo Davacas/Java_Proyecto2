@@ -6,13 +6,27 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%@page import="java.sql.*" %>
+<%
+    String nombre = request.getParameter("nombre");
+    String descripcion = request.getParameter("descripcion");
+    double precio = Double.parseDouble(request.getParameter("precio"));
+    
+    Class.forName("com.mysql.jdbc.Driver");
+    
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PROTECOFood","root","");
+    
+    Statement st = con.createStatement();
+
+    int i = st.executeUpdate("UPDATE Empleado SET "
+            + "nombre=" + nombre + ","
+            + "descripcion=" + descripcion + ","
+            + "precio=" + precio 
+            + "WHERE id_empleado=" + session.getAttribute("id_empleado").toString());
+    if (i > 0) {
+        response.sendRedirect("registroexitoso.jsp");
+    }
+    else {
+        response.sendRedirect("error.jsp");
+    }
+%>
