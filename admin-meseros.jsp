@@ -111,7 +111,7 @@
             
             rs = st.executeQuery("SELECT * FROM Empleado WHERE puesto='MESERO'");
         %>
-        <form action="addmesero.jsp">
+        <form action="./agregar-mesero.jsp">
             <!--input type="submit" value="Añadir platillo"-->
             <br>
             <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Añadir Mesero</button>
@@ -132,7 +132,7 @@
                 
                 <td>
                     <!--a href="updatemesero.jsp">Actualizar mesero</a-->
-                    <a href="updatemesero.jsp" class="waves-effect waves-light btn green">Actualizar mesero</a>
+                    <a href="actualizar-mesero.jsp" class="waves-effect waves-light btn green">Actualizar mesero</a>
                     <!--a href="deletemesero.jsp">Eliminar mesero</a-->
                     <a href="deletemesero.jsp" class="waves-effect waves-light btn red">Eliminar mesero</a>
                 </td>
