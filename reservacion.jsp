@@ -7,20 +7,14 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+
 <%
     if (session.getAttribute("username") == null) {
-%>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Error</title>
-    </head>
-    <body>
-        <p>Acceso no autorizado</p>
-<%
+        response.sendRedirect("index.jsp");
     }
     else{
-%>
+%><html>
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>PROTECO FOOD - Reserva tu mesa</title>
@@ -30,16 +24,6 @@
     </head>
     <body>
         
-        <p>Ingrese los datos deseados</p>
-        <form method="POST" action="addreservacion.jsp">
-            Fecha: <input type="date" name="date">
-            Hora <input type="time" name="time">
-            <input type="checkbox">Confirmar
-            <input type="submit" value="Reservar">
-        </form>
-<%
-    }
-%>
         <!--Scripts necesarios-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!--script type="text/javascript" src="js/jquery-migrate-3.0.0.js"></script-->
@@ -49,6 +33,10 @@
 			$('.parallax').parallax();
 			$(".button-collapse").sideNav();
 			$('.modal-trigger').leanModal();
+                        $('.datepicker').pickadate({
+                            selectMonths: true, // Creates a dropdown to control month
+                            selectYears: 15 // Creates a dropdown of 15 years to control year
+                        });
 		});
 	</script>
 	<!--fin de los scripts-->
@@ -60,14 +48,66 @@
                     <a href="./index.jsp" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     			<ul class="right hide-on-med-and-down">
+                            <li>Bienvenido, <%=session.getAttribute("username")%></li>
                             <li><a href="./platillos.jsp">Platillos</a></li>
-                                <li><a href="#!">Registrarse</a></li>
+                            <%
+                                if (session.getAttribute("username") == null) {
+                            %>
+                                <li><a href="./registro.jsp">Registrarse</a></li>
 				<li><a href="./login.jsp">Acceder</a></li>
+                            <%  }
+                                else if (session.getAttribute("puesto") == null){
+                            %>
+                                <li><a href="./pedido.jsp">Realizar pedido</a></li>
+                                <li><a href="./reservacion.jsp">Realizar reservación</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("GERENTE")){
+                            %>
+                                <li><a href="./admin-platillos.jsp">Administrar platillos</a></li>
+                                <li><a href="./admin-meseros.jsp">Administrar meseros</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("MESERO")){
+                            %>
+                                <li><a href="./pedidos.jsp">Revisar pedidos</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                            %>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
+                            <li>Bienvenido, <%=session.getAttribute("username")%></li>
                             <li><a href="./platillos.jsp">Platillos</a></li>
-                                <li><a href="#!">Registrarse</a></li>
+                            <%
+                                if (session.getAttribute("username") == null) {
+                            %>
+                                <li><a href="./registro.jsp">Registrarse</a></li>
 				<li><a href="./login.jsp">Acceder</a></li>
+                            <%  }
+                                else if (session.getAttribute("puesto") == null){
+                            %>
+                                <li><a href="./pedido.jsp">Realizar pedido</a></li>
+                                <li><a href="./reservacion.jsp">Realizar reservación</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("GERENTE")){
+                            %>
+                                <li><a href="./admin-platillos.jsp">Administrar platillos</a></li>
+                                <li><a href="./admin-meseros.jsp">Administrar meseros</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("MESERO")){
+                            %>
+                                <li><a href="./pedidos.jsp">Revisar pedidos</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                            %>
 			</ul>
 		</div>
 	</nav>
@@ -77,13 +117,14 @@
         
         
             
-        <p>Ingrese los datos deseados</p>
+        
         <div class="row">
+            <p>Ingrese los datos deseados</p>
             <form method="POST" action="addreservacion.jsp" class="col s6">
                 <div class="row">
                     <div class="input-field col s6">
                         <br>
-                        <input id="fecha" type="date" name="date" class="validate">
+                        <input id="fecha" type="date" name="date" class="datepicker">
                         <label for="fecha">Fecha</label>
                     </div>
                     <div class="input-field col s6">
@@ -135,5 +176,7 @@
 	</footer>
     </body>
 </html>
-
+<%
+    }
+%>
 

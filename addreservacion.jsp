@@ -7,7 +7,7 @@
 
 <%@page import="java.sql.*" %>
 <%
-    String id_cliente = session.getAttribute("id_cliente").toString();
+    String cliente = session.getAttribute("username").toString();
     String fecha= request.getParameter("fecha");
     String hora = request.getParameter("hora");
     
@@ -17,8 +17,8 @@
     
     Statement st = con.createStatement();
 
-    int i = st.executeUpdate("INSERT INTO Reservacion (cliente_id,fecha,hora,mesa)"
-            + " VALUES (" + id_cliente + ",\'" + fecha + "\',\'" + hora + "\'," + new R + ")");
+    int i = st.executeUpdate("INSERT INTO reservacion (id_cliente,fecha,hora,mesa)"
+            + " VALUES (" + cliente + ",\'" + fecha + "\',\'" + hora + "\'," + Math.random() + ")");
     if (i > 0) {
         response.sendRedirect("registroexitoso.jsp");
     }
