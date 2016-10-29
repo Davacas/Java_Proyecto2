@@ -2,17 +2,26 @@
     Document   : addreservacion
     Created on : 28/10/2016, 03:44:22 AM
     Author     : dakedekaane
-    Descripcion: Realiza la inserciÃ³n de reservaciones en la base de datos
+    Descripcion: Realiza la inserción de reservaciones en la base de datos
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%@page import="java.sql.*" %>
+<%
+    int cliente_id = Integer.parseInt(request.getParameter("cliente"));
+    int mesa = Integer.parseInt(request.getParameter("pass"));
+    
+    Class.forName("com.mysql.jdbc.Driver");
+    
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PROTECOFood","root","");
+    
+    Statement st = con.createStatement();
+
+    int i = st.executeUpdate("INSERT INTO Reservacion (cliente_id,mesa)"
+            + " VALUES (" + cliente_id + "," + mesa + ",)");
+    if (i > 0) {
+        response.sendRedirect("registroexitoso.jsp");
+    }
+    else {
+        response.sendRedirect("error.jsp");
+    }
+%>
