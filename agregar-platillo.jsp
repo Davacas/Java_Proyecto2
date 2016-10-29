@@ -11,7 +11,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="shortcut icon" type="image/png" href="./img/proteco_food.png"/>
-	<title>Proteco Food</title>
+	<title>Agregar Platillo - Proteco Food</title>
 	<link rel="stylesheet" href="css/materialize.min.css">
 </head>
 <body>

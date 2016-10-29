@@ -47,7 +47,7 @@
             ResultSet rs;
             rs = st.executeQuery("SELECT * FROM Platillo");
         %>
-        <form action="addplatillo.jsp">
+        <form action="agregar-platillo.jsp">
             <br>
             <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Añadir Platillos</button>
         </form>
@@ -70,7 +70,7 @@
                 <td> <%= rs.getString(3) %></td>
                 <td> <%= rs.getString(4) %></td>
                 <td>
-                    <a href="updateplatillo.jsp?nombre=<%=rs.getString(2)%>" class="waves-effect waves-light btn green">Actualizar platillo</a>
+                    <a href="actualizar-platillo.jsp?nombre=<%=rs.getString(2)%>" class="waves-effect waves-light btn green">Actualizar platillo</a>
                     <a href="deleteplatillo.jsp" class="waves-effect waves-light btn red">Eliminar platillo</a>
                 </td>
             </tr>

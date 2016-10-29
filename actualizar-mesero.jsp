@@ -11,7 +11,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="shortcut icon" type="image/png" href="./img/proteco_food.png"/>
-	<title>Agregar Mesero - Proteco Food</title>
+	<title>Actualizar Mesero - Proteco Food</title>
 	<link rel="stylesheet" href="css/materialize.min.css">
 </head>
 <body>
@@ -50,15 +50,14 @@
 
 	<!--fin del navbar-->
         
-
     <div>
         <div class="container" id="info">
             <div>
-                <h2 style="text-align: left" class="blue-grey-text text-lighten-2">Nuevo Mesero</h2>
+                <h2 style="text-align: left" class="blue-grey-text text-lighten-2">Actualizar Mesero</h2>
             </div>
         </div>
             <div class="row">
-                <form class="col s8"  method="POST" action="./addmesero.jsp">
+                <form class="col s8"  method="POST" action="./updatemesero.jsp">
                     <div class="row">
                         <div class="input-field col s6" method="POST" action="adduser.jsp">
                             <input  id="first_name" name="user" type="text" class="validate">
@@ -75,7 +74,7 @@
                             <!--input type="submit" value="Registrarse"-->
                         </div>
                         <div class="input-field col s6">
-                            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Registrar
+                            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Actualizar
                                <i class="material-icons right">send</i>
                             </button>
                         </div>
@@ -86,6 +85,7 @@
         <br>
         <br>
         </div>
+
 
 	<!--inicio del footer-->
 	<footer class="page-footer blue-grey lighten-2">

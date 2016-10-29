@@ -11,7 +11,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="shortcut icon" type="image/png" href="./img/proteco_food.png"/>
-	<title>Agregar Mesero - Proteco Food</title>
+	<title>Actualizar Platillo - Proteco Food</title>
 	<link rel="stylesheet" href="css/materialize.min.css">
 </head>
 <body>
@@ -54,28 +54,28 @@
     <div>
         <div class="container" id="info">
             <div>
-                <h2 style="text-align: left" class="blue-grey-text text-lighten-2">Nuevo Mesero</h2>
+                <h2 style="text-align: left" class="blue-grey-text text-lighten-2">Actualizar Platillo</h2>
             </div>
         </div>
             <div class="row">
-                <form class="col s8"  method="POST" action="./addmesero.jsp">
+                <form class="col s8"  method="POST" action="./udateplatillo.jsp">
                     <div class="row">
                         <div class="input-field col s6" method="POST" action="adduser.jsp">
                             <input  id="first_name" name="user" type="text" class="validate">
-                            <label for="first_name">Usuario</label>
+                            <label for="first_name">Nombre</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="password" name="pass" type="password" class="validate">
-                            <label for="last_name">Contraseña</label>
+                            <input id="password" name="pass" type="text" class="validate">
+                            <label for="last_name">Descripcion</label>
                             <!--input type="submit" value="Registrarse"-->
                         </div>
                         <div class="input-field col s6">
-                            <input id="nomb" name="nombre" type="text" class="validate">
-                            <label for="nomb">Nombre</label>
+                            <input id="nomb" name="nombre" type="number" class="validate">
+                            <label for="nomb">Precio</label>
                             <!--input type="submit" value="Registrarse"-->
                         </div>
                         <div class="input-field col s6">
-                            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Registrar
+                            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Actualizar
                                <i class="material-icons right">send</i>
                             </button>
                         </div>
