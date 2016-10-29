@@ -11,8 +11,6 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="shortcut icon" type="image/png" href="./img/proteco_food.png"/>
-	<link rel="shortcut icon" type="image/png" href="./img/proteco_food.png"/>
-        <link rel="stylesheet" href="">
 	<title>Proteco Food</title>
 	<link rel="stylesheet" href="css/materialize.min.css">
 </head>
@@ -34,16 +32,16 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper blue-grey lighten-2">
-                    <a href="#!" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
+                    <a href="./index.jsp" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     			<ul class="right hide-on-med-and-down">
-				<li><a href="#">Platillos</a></li>
-                                <li><a href="./registro.jsp">Registrarse</a></li>
+                            <li><a href="./platillos.jsp">Platillos</a></li>
+                                <li><a href="#!">Registrarse</a></li>
 				<li><a href="./login.jsp">Acceder</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
-                                <li><a href="#">Platillos</a></li>
-                                <li><a href="./registro.jsp">Registrarse</a></li>
+                            <li><a href="./platillos.jsp">Platillos</a></li>
+                                <li><a href="#!">Registrarse</a></li>
 				<li><a href="./login.jsp">Acceder</a></li>
 			</ul>
 		</div>

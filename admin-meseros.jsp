@@ -34,7 +34,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper blue-grey lighten-2">
-                    <a href="#!" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
+                    <a href="./index.jsp" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
 			<!--a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     			<ul class="right hide-on-med-and-down">
 				<li><a href="#">Platillos</a></li>
@@ -64,14 +64,16 @@
             <br>
             <a class="waves-effect waves-light btn blue-grey lighten-2">Añadir mesero</a>
         </form>
-    <table>
+    <table class="highlight">
         <h4>Meseros</h4>
             <!--thead>Mesero</thead-->
+            <thead>
             <tr>
                 <th>Nombre</th>
                 <!--<th>Platillos servidos</th>-->
                 <th>Opciones</th>
             </tr>
+            </thead>
             <% while(rs.next()){ %>
             <tr>
                 <td> <%= rs.getString(4) %></td>

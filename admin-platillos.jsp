@@ -33,7 +33,7 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper blue-grey lighten-2">
-                    <a href="#!" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
+                    <a href="./index.jsp" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
 			<!--a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a-->
     			
 		</div>
@@ -51,10 +51,10 @@
             <br>
             <a class="waves-effect waves-light btn blue-grey lighten-2">Añadir platillo</a>
         </form>
-    <table>
+        <table class="highlight">
             
         <h4>Platillos</h4>
-            
+        <thead>
             <tr>
                 <th>Imagen</th>
                 <th>Nombre</th>
@@ -62,6 +62,7 @@
                 <th>Precio</th>
                 <th>Opciones</th>
             </tr>
+            </thead>
             <% while(rs.next()){ %>
             <tr>
                 <td></td>
