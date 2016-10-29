@@ -14,7 +14,7 @@
     </head>
     <body>
         <form method="post" action="pedido.jsp">
-            Ingrese la clave del platillo: <input type="text" name="platillo">
+            Ingrese la clave del platillo: <input type="number" name="platillo">
             <input type="submit" value="Agregar">
         </form>
     </body>
