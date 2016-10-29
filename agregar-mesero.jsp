@@ -35,14 +35,66 @@
                     <a href="./index.jsp" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     			<ul class="right hide-on-med-and-down">
+                            <li>Bienvenido, <%=session.getAttribute("username")%></li>
                             <li><a href="./platillos.jsp">Platillos</a></li>
-                                <li><a href="#!">Registrarse</a></li>
+                            <%
+                                if (session.getAttribute("username") == null) {
+                            %>
+                                <li><a href="./registro.jsp">Registrarse</a></li>
 				<li><a href="./login.jsp">Acceder</a></li>
+                            <%  }
+                                else if (session.getAttribute("puesto") == null){
+                            %>
+                                <li><a href="./pedido.jsp">Realizar pedido</a></li>
+                                <li><a href="./reservacion.jsp">Realizar reservación</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("GERENTE")){
+                            %>
+                                <li><a href="./admin-platillos.jsp">Administrar platillos</a></li>
+                                <li><a href="./admin-meseros.jsp">Administrar meseros</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("MESERO")){
+                            %>
+                                <li><a href="./pedidos.jsp">Revisar pedidos</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                            %>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
+                            <li>Bienvenido, <%=session.getAttribute("username")%></li>
                             <li><a href="./platillos.jsp">Platillos</a></li>
-                                <li><a href="#!">Registrarse</a></li>
+                            <%
+                                if (session.getAttribute("username") == null) {
+                            %>
+                                <li><a href="./registro.jsp">Registrarse</a></li>
 				<li><a href="./login.jsp">Acceder</a></li>
+                            <%  }
+                                else if (session.getAttribute("puesto") == null){
+                            %>
+                                <li><a href="./pedido.jsp">Realizar pedido</a></li>
+                                <li><a href="./reservacion.jsp">Realizar reservación</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("GERENTE")){
+                            %>
+                                <li><a href="./admin-platillos.jsp">Administrar platillos</a></li>
+                                <li><a href="./admin-meseros.jsp">Administrar meseros</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("MESERO")){
+                            %>
+                                <li><a href="./pedidos.jsp">Revisar pedidos</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                            %>
 			</ul>
 		</div>
 	</nav>
