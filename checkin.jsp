@@ -7,18 +7,18 @@
 
 <%@page import="java.sql.*" %>
 <%
-    String username = request.getParameter("usuarionombre");
-    String pwd = request.getParameter("pass");
+    String username = request.getParameter("user");
+    String password = request.getParameter("pass");
     
     Class.forName("com.mysql.jdbc.Driver");
     
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Registro","root","");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PROTECOFood","root","");
     
     Statement st = con.createStatement();
     
     ResultSet rs;
     
-    rs = st.executeQuery("SELECT * FROM Usuario WHERE username=\'"+username+"\' and password=\'"+pwd+"\'");
+    rs = st.executeQuery("SELECT * FROM Cliente WHERE username=\'"+username+"\' and password=\'"+password+"\'");
     
     if(rs.next()){
         session.setAttribute("username",username);
