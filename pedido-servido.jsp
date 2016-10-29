@@ -7,7 +7,7 @@
 <%@page import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    int id = Integer.parseInt(request.getParameter("id_pedido"));
+    String id = request.getParameter("id_pedido");
     
     Class.forName("com.mysql.jdbc.Driver");
     
@@ -15,13 +15,12 @@
     
     Statement st = con.createStatement();
 
-    int i = st.executeUpdate("UPDATE Pedido SET"
-            + "estado = \'SERVIDO\'"
-            + "WHERE id=" + id);
-    if (i > 0) {
-        response.sendRedirect("registroexitoso.jsp");
-    }
-    else {
-        response.sendRedirect("error.jsp");
-    }
+    st.executeUpdate("UPDATE Pedido SET "
+            + "estado=\'SERVIDO\'"
+            + "WHERE id_pedido=" + id + ";");%>
+            <%=id%>
+                    <%
+    
+    //response.sendRedirect("pedidos.jsp");
+        
 %>

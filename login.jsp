@@ -5,13 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    if (session.getAttribute("username") != null) {
+        response.sendRedirect("index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="shortcut icon" type="image/png" href="./img/proteco_food.png"/>
-        <link rel="stylesheet" href="">
 	<title>Proteco Food</title>
 	<link rel="stylesheet" href="css/materialize.min.css">
 </head>
@@ -33,17 +37,17 @@
 	<div class="navbar-fixed">
 	<nav>
 		<div class="nav-wrapper blue-grey lighten-2">
-                    <a href="#!" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
+                    <a href="./index.jsp" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     			<ul class="right hide-on-med-and-down">
-				<li><a href="#">Platillos</a></li>
+                            <li><a href="./platillos.jsp">Platillos</a></li>
                                 <li><a href="./registro.jsp">Registrarse</a></li>
-				<li><a href="./login.jsp">Acceder</a></li>
+				<li><a href="#!">Acceder</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
-                                <li><a href="#">Platillos</a></li>
+                            <li><a href="./platillos.jsp">Platillos</a></li>
                                 <li><a href="./registro.jsp">Registrarse</a></li>
-				<li><a href="./login.jsp">Acceder</a></li>
+				<li><a href="#!">Acceder</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -74,8 +78,9 @@
                             <!--input type="submit" value="Registrarse"-->
                         </div>
                         <div class="input-field col s6">
-                            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Acceder
-                            <i class="material-icons right">send</i>
+                            <!--a class="waves-effect waves-light btn blue-grey lighten-2" type="submit" >Acceder</a-->
+                            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Submit
+                               <i class="material-icons right">send</i>
                             </button>
                         </div>
                     </div>

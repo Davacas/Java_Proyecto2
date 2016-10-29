@@ -21,6 +21,7 @@
     rs = st.executeQuery("SELECT * FROM Cliente WHERE username=\'"+username+"\' and password=\'"+password+"\'");
     
     if(rs.next()){
+        session.setAttribute("id_cliente",st.executeQuery("SELECT id_cliente FROM Cliente WHERE username=\'" + username + "\'"));
         session.setAttribute("username",username);
         response.sendRedirect("index.jsp");
     }
@@ -32,13 +33,13 @@
             session.setAttribute("puesto",rs.getString(5));
             if(session.getAttribute("puesto").toString().equals("MESERO")) {
                 
-                response.sendRedirect("menu-meseros.jsp");
+                response.sendRedirect("index.jsp");
             }
             else if(session.getAttribute("puesto").toString().equals("GERENTE")) {
                 %>
         test
         <%
-                response.sendRedirect("menu-gerente.jsp");
+                response.sendRedirect("index.jsp");
             }
             
         }

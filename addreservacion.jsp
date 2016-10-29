@@ -7,8 +7,9 @@
 
 <%@page import="java.sql.*" %>
 <%
-    int cliente_id = Integer.parseInt(request.getParameter("cliente"));
-    int mesa = Integer.parseInt(request.getParameter("pass"));
+    String id_cliente = session.getAttribute("id_cliente").toString();
+    String fecha= request.getParameter("fecha");
+    String hora = request.getParameter("hora");
     
     Class.forName("com.mysql.jdbc.Driver");
     
@@ -16,8 +17,8 @@
     
     Statement st = con.createStatement();
 
-    int i = st.executeUpdate("INSERT INTO Reservacion (cliente_id,mesa)"
-            + " VALUES (" + cliente_id + "," + mesa + ",)");
+    int i = st.executeUpdate("INSERT INTO Reservacion (cliente_id,fecha,hora,mesa)"
+            + " VALUES (" + id_cliente + ",\'" + fecha + "\',\'" + hora + "\'," + new R + ")");
     if (i > 0) {
         response.sendRedirect("registroexitoso.jsp");
     }

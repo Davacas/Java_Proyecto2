@@ -11,7 +11,6 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="shortcut icon" type="image/png" href="./img/proteco_food.png"/>
-	<link rel="stylesheet" href="">
 	<title>Proteco Food</title>
 	<link rel="stylesheet" href="css/materialize.min.css">
 </head>
@@ -36,14 +35,66 @@
                     <a href="#!" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     			<ul class="right hide-on-med-and-down">
-				<li><a href="#">Platillos</a></li>
+                            <li>Bienvenido, <%=session.getAttribute("username")%></li>
+                            <li><a href="./platillos.jsp">Platillos</a></li>
+                            <%
+                                if (session.getAttribute("username") == null) {
+                            %>
                                 <li><a href="./registro.jsp">Registrarse</a></li>
 				<li><a href="./login.jsp">Acceder</a></li>
+                            <%  }
+                                else if (session.getAttribute("puesto") == null){
+                            %>
+                                <li><a href="./pedido.jsp">Realizar pedido</a></li>
+                                <li><a href="./reservacion.jsp">Realizar reservación</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("GERENTE")){
+                            %>
+                                <li><a href="./admin-platillos.jsp">Administrar platillos</a></li>
+                                <li><a href="./admin-meseros.jsp">Administrar meseros</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("MESERO")){
+                            %>
+                                <li><a href="./pedidos.jsp">Revisar pedidos</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                            %>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
-                                <li><a href="#">Platillos</a></li>
+                            <li>Bienvenido, <%=session.getAttribute("username")%></li>
+                            <li><a href="./platillos.jsp">Platillos</a></li>
+                            <%
+                                if (session.getAttribute("username") == null) {
+                            %>
                                 <li><a href="./registro.jsp">Registrarse</a></li>
 				<li><a href="./login.jsp">Acceder</a></li>
+                            <%  }
+                                else if (session.getAttribute("puesto") == null){
+                            %>
+                                <li><a href="./pedido.jsp">Realizar pedido</a></li>
+                                <li><a href="./reservacion.jsp">Realizar reservación</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("GERENTE")){
+                            %>
+                                <li><a href="./admin-platillos.jsp">Administrar platillos</a></li>
+                                <li><a href="./admin-meseros.jsp">Administrar meseros</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                                else if (session.getAttribute("puesto").toString().equals("MESERO")){
+                            %>
+                                <li><a href="./pedidos.jsp">Revisar pedidos</a></li>
+                                <li><a href="./checkout.jsp">Cerrar sesión</a></li>
+                            <%
+                                }
+                            %>
 			</ul>
 		</div>
 	</nav>
@@ -87,15 +138,15 @@
 		</div>
 	</div>
         
-		<a href="#modal1" class="waves-effect waves-light btn modal-trigger grey">Read More</a>
+		<a href="#modal1" class="waves-effect waves-light btn modal-trigger grey">Creadores</a>
 
 	<div id="modal1" class="modal">
 		<div class="modal-content">
-			<h4>Batman!!!</h4>
+			<h4>Creadores:</h4>
 			<p>
-				Pagina creada con wikipedia e imagenes scadas de google xD, lo que sigue es un lorem :v
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ut, odit ipsum necessitatibus ipsa hic soluta labore asperiores deserunt alias dolorem consectetur fugit iusto id voluptas vel, quis temporibus, quia sit inventore repellendus omnis repellat. Blanditiis dolorem corrupti eum quidem voluptatum architecto et. Amet velit vero, aliquid vitae nam, perferendis.
-				
+                            Daniel Vargas <br>
+                            Bruno Torres <br>
+                            David Yaxkin <br>
 			</p>
 		</div>
 		<div class="modal-footer">
