@@ -17,7 +17,7 @@
         <form method="POST" action="adduser.jsp">
             Usuario: <input type="text" name="user">
             Contraseña: <input type="password" name="pass">
-            <input type="submit" value="Iniciar sesión">
+            <input type="submit" value="Registrarse">
         </form>
     </body>
 </html>
