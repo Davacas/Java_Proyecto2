@@ -49,7 +49,7 @@
         %>
         <form action="addplatillo.jsp">
             <br>
-            <a class="waves-effect waves-light btn blue-grey lighten-2">Añadir platillo</a>
+            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Añadir Platillos</button>
         </form>
         <table class="highlight">
             

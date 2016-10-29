@@ -60,9 +60,8 @@
                 <h2 style="text-align: left" class="blue-grey-text text-lighten-2">Registro</h2>
             </div>
         </div>
-        
             <div class="row">
-                <form class="col s6 ">
+                <form class="col s6 " method="POST" action="./adduser.jsp">
                     <div class="row">
                         <div class="input-field col s6" method="POST" action="adduser.jsp">
                             <input  id="first_name" name="user" type="text" class="validate">
@@ -74,7 +73,9 @@
                             <!--input type="submit" value="Registrarse"-->
                         </div>
                         <div class="input-field col s6">
-                            <a class="waves-effect waves-light btn blue-grey lighten-2">Registrarse</a>
+                            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Registrar
+                               <i class="material-icons right">send</i>
+                            </button>
                         </div>
                     </div>
                 </form>

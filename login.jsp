@@ -61,9 +61,9 @@
         </div>
         
             <div class="row">
-                <form class="col s6 ">
+                <form class="col s6 " method="post" action="./checkin.jsp">
                     <div class="row">
-                        <div class="input-field col s6" method="POST" action="adduser.jsp">
+                        <div class="input-field col s6">
                             <input  id="first_name" name="user" type="text" class="validate">
                             <label for="first_name">Usuario</label>
                         </div>
@@ -73,7 +73,10 @@
                             <!--input type="submit" value="Registrarse"-->
                         </div>
                         <div class="input-field col s6">
-                            <a class="waves-effect waves-light btn blue-grey lighten-2">Acceder</a>
+                            <!--a class="waves-effect waves-light btn blue-grey lighten-2" type="submit" >Acceder</a-->
+                            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Submit
+                               <i class="material-icons right">send</i>
+                            </button>
                         </div>
                     </div>
                 </form>

@@ -62,7 +62,7 @@
         <form action="addmesero.jsp">
             <!--input type="submit" value="Añadir platillo"-->
             <br>
-            <a class="waves-effect waves-light btn blue-grey lighten-2">Añadir mesero</a>
+            <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Añadir Mesero</button>
         </form>
     <table class="highlight">
         <h4>Meseros</h4>
