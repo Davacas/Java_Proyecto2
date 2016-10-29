@@ -29,7 +29,7 @@
                 <th>Descripcion</th>
                 <th>Precio</th>
             </tr>
-                        <% while(rs.next()){ %>
+            <% while(rs.next()){ %>
             <tr>
                 <td></td>
                 <td> <%= rs.getString(2) %></td>

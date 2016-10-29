@@ -13,7 +13,7 @@
         <title>PROTECO FOOD - Reserva tu mesa</title>
     </head>
     <body>
-        <p>Ingrese los datos deseados?</p>
+        <p>Ingrese los datos deseados</p>
         <form method="POST" action="addreservacion.jsp">
             Fecha: <input type="date" name="date">
             Hora <input type="time" name="time">
