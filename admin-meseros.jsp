@@ -35,7 +35,7 @@
 	<nav>
 		<div class="nav-wrapper blue-grey lighten-2">
                     <a href="#!" class="brand-logo"><img src="img/proteco_food.png" style="width:  40px ; height: 40px;">PROTECO FOOD</a>
-			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<!--a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     			<ul class="right hide-on-med-and-down">
 				<li><a href="#">Platillos</a></li>
                                 <li><a href="./registro.jsp">Registrarse</a></li>
@@ -45,7 +45,7 @@
                                 <li><a href="#">Platillos</a></li>
                                 <li><a href="./registro.jsp">Registrarse</a></li>
 				<li><a href="./login.jsp">Acceder</a></li>
-			</ul>
+			</ul-->
 		</div>
 	</nav>
 	</div>
@@ -74,7 +74,7 @@
             </tr>
             <% while(rs.next()){ %>
             <tr>
-                <td> <!%= rs.getString(4) %></td>
+                <td> <%= rs.getString(4) %></td>
                 
                 <td>
                     <!--a href="updatemesero.jsp">Actualizar mesero</a-->
@@ -83,7 +83,7 @@
                     <a href="deletemesero.jsp" class="waves-effect waves-light btn red">Eliminar mesero</a>
                 </td>
             </tr>
-            <!% } %>
+            <% } %>
         </table>
         
         
