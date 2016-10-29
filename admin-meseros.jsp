@@ -74,7 +74,7 @@
             </tr>
             <% while(rs.next()){ %>
             <tr>
-                <td> <!%= rs.getString(4) %></td>
+                <td> <%= rs.getString(4) %></td>
                 
                 <td>
                     <!--a href="updatemesero.jsp">Actualizar mesero</a-->
@@ -83,7 +83,7 @@
                     <a href="deletemesero.jsp" class="waves-effect waves-light btn red">Eliminar mesero</a>
                 </td>
             </tr>
-            <!% } %>
+            <% } %>
         </table>
         
         
