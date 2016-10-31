@@ -15,7 +15,7 @@
     
     Statement st = con.createStatement();
 
-    int i = st.executeUpdate("DELETE FROM Platillo WHERE nombre=" + nombre);
+    int i = st.executeUpdate("DELETE FROM Platillo WHERE nombre=\'" + nombre + "\'");
     if (i > 0) {
         response.sendRedirect("registroexitoso.jsp");
     }
