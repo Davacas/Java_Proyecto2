@@ -110,7 +110,7 @@
             </div>
         </div>
             <div class="row">
-                <form class="col s8"  method="POST" action="./udateplatillo.jsp">
+                <form class="col s8"  method="POST" action="./updateplatillo.jsp">
                     <div class="row">
                         <div class="input-field col s6" method="POST" action="adduser.jsp">
                             <input  id="first_name" name="user" type="text" class="validate">

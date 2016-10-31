@@ -22,7 +22,7 @@
             + "nombre=" + nombre + ","
             + "descripcion=" + descripcion + ","
             + "precio=" + precio 
-            + "WHERE id_empleado=" + session.getAttribute("id_empleado").toString());
+            + "WHERE nombre=\'" + nombre + "\'");
     if (i > 0) {
         response.sendRedirect("registroexitoso.jsp");
     }

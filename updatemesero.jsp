@@ -18,9 +18,9 @@
     
     Statement st = con.createStatement();
 
-    int i = st.executeUpdate("UPDATE Empleado SET "
-            + "nombre=\'" + nombre + "\', "
-            + "password=\'" + password + "\' WHERE username=\'" + username + "\'");
+    int i = st.executeUpdate("UPDATE `Empleado` SET "
+            + "`nombre`=\'" + nombre + "\', "
+            + "`password`=\'" + password + "\'WHERE `username`=\'" + username + "\'");
     if (i > 0) {
         response.sendRedirect("registroexitoso.jsp");
     }
